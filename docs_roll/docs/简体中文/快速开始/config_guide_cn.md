@@ -36,7 +36,7 @@ num_return_sequences_in_group: 8
 - `rpc_timeout`: 远程过程调用（RPC）的超时时长，单位为秒。用于 Ray Actor 之间通信。如果一个调用在此时间内没有响应，则会抛出超时错误。
 - `output_dir`: 模型预测结果和检查点（checkpoints）的输出目录。
 - `logging_dir`: 存储日志文件的目录。
-- `track_with`:  用于跟踪实验进度的工具类型。可选 wandb (Weights & Biases), tensorboard (TensorBoard), 或 stdout (标准输出)。
+- `track_with`:  用于跟踪实验进度的工具类型。可选 wandb (Weights & Biases), tensorboard (TensorBoard), swanlab (SwanLab) 或 stdout (标准输出)。
 - `tracker_kwargs`:  传递给所选跟踪器类的额外关键字参数（字典）。例如，WandB 的 API 密钥、项目名称等。
 
 ### 训练/评估流程配置

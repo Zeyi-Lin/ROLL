@@ -74,6 +74,32 @@ class WandbTracker(BaseTracker):
         self.run.finish()
 
 
+class SwanlabTracker(BaseTracker):
+
+    def __init__(self, config: dict, **kwargs):
+        self.config = config
+        project = kwargs.pop("project", None)
+        experiment_name = kwargs.pop("experiment_name", None)
+        workspace = kwargs.pop("workspace", None)
+        name = kwargs.pop("name", None)
+        tags = kwargs.pop("tags", None)
+        description = kwargs.pop("description", None)
+        log_dir = kwargs.pop("logdir", None)
+        api_key = kwargs.pop("api_key", None)
+        import swanlab
+        if api_key:
+            swanlab.login(api_key=api_key)
+        self.run = swanlab.init(project=project, experiment_name=experiment_name, workspace=workspace, name=name, tags=tags, description=description, logdir=log_dir)
+        
+        self.run.config.update(config)
+
+    def log(self, values: dict, step: Optional[int], **kwargs):
+        self.run.log(values, step=step, **kwargs)
+
+    def finish(self):
+        self.run.finish()
+
+
 class StdoutTracker(BaseTracker):
 
     def __init__(self, config: dict, **kwargs):
@@ -98,4 +124,5 @@ def create_tracker(tracker_name: str, config: dict, **kwargs) -> BaseTracker:
 
 tracker_registry["tensorboard"] = TensorBoardTracker
 tracker_registry["wandb"] = WandbTracker
+tracker_registry["swanlab"] = SwanlabTracker
 tracker_registry["stdout"] = StdoutTracker

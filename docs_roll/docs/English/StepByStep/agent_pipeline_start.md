@@ -241,7 +241,7 @@ python examples/start_agentic_pipeline.py \
 
 * **Console Output** – Observe Hydra, Ray, and pipeline logs.  
 * **Log Files** – Check the `logging_dir` specified in YAML.  
-* **Experiment Tracking** – If configured, metrics appear in WandB.  
+* **Experiment Tracking** – If configured, metrics appear in WandB/SwanLab.  
 * **TensorBoard**
 
   ```bash
@@ -251,7 +251,7 @@ python examples/start_agentic_pipeline.py \
 ### Step&nbsp;5: Outputs and Results
 
 * **Trained Models** – Checkpoints saved under `output_dir`.  
-* **Evaluation Metrics** – Logged in WandB/TensorBoard and console.
+* **Evaluation Metrics** – Logged in WandB/SwanLab/TensorBoard and console.
 
 ---
 

@@ -4,6 +4,7 @@
 pipeline对应的config文件中，提供了两种数据追踪方式
 - TensorBoard
 - Weights & Biases (wandb)
+- SwanLab
 ```yaml
 # wandb (Weights & Biases) 提供了更高级的云端实验管理和协作功能。
 #track_with: wandb
@@ -12,6 +13,18 @@ pipeline对应的config文件中，提供了两种数据追踪方式
 #  project: roll-agentic
 #  name: ${exp_name}_frozen_lake
 #  notes: "agentic_pipeline"
+#  tags:
+#    - agentic
+#    - roll
+#    - baseline
+
+# swanlab (SwanLab) offers more advanced cloud-based experiment management and collaboration features.
+#track_with: swanlab
+#tracker_kwargs:
+#  api_key:
+#  project: roll-agentic
+#  experiment_name: ${exp_name}_frozen_lake
+#  description: "agentic_pipeline"
 #  tags:
 #    - agentic
 #    - roll

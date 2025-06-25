@@ -4,6 +4,7 @@
 The pipeline's configuration file supports two methods for data tracking:
 - TensorBoard
 - Weights & Biases (wandb)
+- SwanLab
 ```yaml
 # wandb (Weights & Biases) offers more advanced cloud-based experiment management and collaboration features.
 #track_with: wandb
@@ -16,6 +17,19 @@ The pipeline's configuration file supports two methods for data tracking:
 #    - agentic
 #    - roll
 #    - baseline
+
+# swanlab (SwanLab) offers more advanced cloud-based experiment management and collaboration features.
+#track_with: swanlab
+#tracker_kwargs:
+#  api_key:
+#  project: roll-agentic
+#  experiment_name: ${exp_name}_frozen_lake
+#  description: "agentic_pipeline"
+#  tags:
+#    - agentic
+#    - roll
+#    - baseline
+
 
 track_with: tensorboard
 tracker_kwargs:
